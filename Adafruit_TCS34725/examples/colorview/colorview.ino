@@ -63,10 +63,10 @@ void loop() {
 
   tcs.setInterrupt(true);  // turn off LED
   
-  Serial.print("C:\t"); Serial.print(clear);
-  Serial.print("\tR:\t"); Serial.print(red);
-  Serial.print("\tG:\t"); Serial.print(green);
-  Serial.print("\tB:\t"); Serial.print(blue);
+  //Serial.print("C:\t"); Serial.print(clear);
+  //Serial.print(red); Serial.print(' ');
+  //Serial.print(green); Serial.print(' ');
+  //Serial.println(blue);
 
   // Figure out some basic hex code for visualization
   uint32_t sum = clear;
@@ -75,14 +75,20 @@ void loop() {
   g = green; g /= sum;
   b = blue; b /= sum;
   r *= 256; g *= 256; b *= 256;
-  Serial.print("\t");
-  Serial.print((int)r, HEX); Serial.print((int)g, HEX); Serial.print((int)b, HEX);
-  Serial.println();
+  
+  Serial.print(int(r)); Serial.print(' ');
+  Serial.print(int(g)); Serial.print(' ');
+  Serial.println(int(b));
+  
+  
+  //Serial.print("\t");
+  //Serial.print((int)r, HEX); Serial.print((int)g, HEX); Serial.print((int)b, HEX);
+  //Serial.println();
 
   //Serial.print((int)r ); Serial.print(" "); Serial.print((int)g);Serial.print(" ");  Serial.println((int)b );
 
-  analogWrite(redpin, gammatable[(int)r]);
-  analogWrite(greenpin, gammatable[(int)g]);
-  analogWrite(bluepin, gammatable[(int)b]);
+  //analogWrite(redpin, gammatable[(int)r]);
+  //analogWrite(greenpin, gammatable[(int)g]);
+  //analogWrite(bluepin, gammatable[(int)b]);
 }
 
